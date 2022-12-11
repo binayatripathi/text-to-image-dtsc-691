@@ -1,0 +1,37 @@
+---
+id: 0
+name: Devnet deployment
+network: devnet
+stacks-node: "http://localhost:20443"
+bitcoin-node: "http://devnet:devnet@localhost:18443"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - requirement-publish:
+            contract-id: SPNWZ5V2TPWGQGVDR6T7B6RQ4XMGZ4PXTEE0VQ0S.gamma-commission-v1
+            remap-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            remap-principals:
+              SPNWZ5V2TPWGQGVDR6T7B6RQ4XMGZ4PXTEE0VQ0S: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            cost: 1730
+            path: ".requirements/SPNWZ5V2TPWGQGVDR6T7B6RQ4XMGZ4PXTEE0VQ0S.gamma-commission-v1.clar"
+        - requirement-publish:
+            contract-id: SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait
+            remap-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            remap-principals:
+              SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            cost: 4680
+            path: ".requirements/SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.clar"
+        - requirement-publish:
+            contract-id: SP3D6PV2ACBPEKYJTCMH7HEN02KP87QSP8KTEH335.commission-trait
+            remap-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            remap-principals:
+              SP3D6PV2ACBPEKYJTCMH7HEN02KP87QSP8KTEH335: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            cost: 700
+            path: ".requirements/SP3D6PV2ACBPEKYJTCMH7HEN02KP87QSP8KTEH335.commission-trait.clar"
+        - contract-publish:
+            contract-name: text-to-image
+            expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            cost: 46650
+            path: contracts/text-to-image.clar
+            anchor-block-only: true
